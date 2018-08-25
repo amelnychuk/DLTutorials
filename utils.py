@@ -19,7 +19,7 @@ def get_data():
 
     # onehot encode
     Z = np.zeros((N, 4))
-    Z[np.arange(N), X[:, 0:(D - 1).as_type(np.int32)]] = 1
+    Z[np.arange(N), X[:, (D - 1).as_type(np.int32)]] = 1
     X2[:, -4:] = Z
 
     return X2, Y
