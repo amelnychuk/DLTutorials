@@ -45,6 +45,7 @@ def classification_rate(Y, P):
     return np.sum(Y == np.round(P)) / len(Y)
 
 
+"""
 P_Y_given_X = forward(X, W1, b1, W2, b2)
 P = np.argmax(P_Y_given_X, axis=1)
 
@@ -52,3 +53,4 @@ assert(len(P) == len(Y))
 
 class_rate = classification_rate(Y, P)
 print(f"Classification rate: {class_rate}")
+"""
