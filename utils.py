@@ -33,5 +33,13 @@ def get_binary_data():
     return X2, Y2
 
 
-def every(N, value):
-    return value % N == 0
+def every(N: int, iteration: int) -> bool:
+    """Returns true for every N of iteration.
+
+    :param N:
+        number to modulo by
+    :param iteration:
+        iteration of a loop
+    :return:
+    """
+    return iteration % N == 0
