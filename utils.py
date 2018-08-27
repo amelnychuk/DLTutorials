@@ -5,7 +5,7 @@ import pandas as pd
 def get_data():
     data = pd.read_csv(
         'https://raw.githubusercontent.com/lazyprogrammer/machine_learning_examples/master/ann_logistic_extra/ecommerce_data.csv')
-    data_matrix = data.as_matrix()
+    data_matrix = data.values
 
     X = data_matrix[:, :-1]
     Y = data_matrix[:, -1]
@@ -19,7 +19,7 @@ def get_data():
 
     # onehot encode
     Z = np.zeros((N, 4))
-    Z[np.arange(N), X[:, (D - 1).as_type(np.int32)]] = 1
+    Z[np.arange(N), X[:, (D - 1)].astype(np.int32)] = 1
     X2[:, -4:] = Z
 
     return X2, Y
@@ -31,3 +31,7 @@ def get_binary_data():
     Y2 = Y[Y <= 1]
 
     return X2, Y2
+
+
+def every(N, value):
+    return value % N == 0
